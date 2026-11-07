@@ -1,0 +1,45 @@
+{
+  "name": "@leostacowski/pkgs",
+  "version": "0.0.1",
+  "description": "Centralized package of reusable JavaScript tools.",
+  "homepage": "https://www.npmjs.com/package/@leostacowski/pkgs",
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "npm"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "bugs": {
+    "url": "https://github.com/leostacowski/pkgs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leostacowski/pkgs.git"
+  },
+  "license": "Unlicense",
+  "author": {
+    "name": "leostacowski",
+    "email": "leonardo.stacowski@hotmail.com",
+    "url": "git+https://github.com/leostacowski/"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "files": [
+    "modules"
+  ],
+  "exports": {
+    ".": "./modules/index.js",
+    "./logger": "./modules/logger/index.js"
+  },
+  "imports": {
+    "#logger/*": "./modules/logger/*"
+  },
+  "scripts": {
+    "dev": "node --watch ./modules/index.js",
+    "deploy": "npm publish"
+  }
+}
