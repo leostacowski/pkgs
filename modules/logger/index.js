@@ -11,9 +11,6 @@ const LOGGER_COLORS = {
   DEFAULT: {
     code: '\x1b[94m',
   },
-  WHITE: {
-    code: '\x1b[37m',
-  },
   RESET: {
     code: '\x1b[0m',
   },

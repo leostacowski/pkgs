@@ -1,1 +1,7 @@
-export { default as Logger } from './logger/index.js'
+import LoggerModule from './logger/index.js'
+
+export const Logger = LoggerModule
+
+export default {
+  Logger,
+}
