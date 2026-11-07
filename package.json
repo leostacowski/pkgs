@@ -40,6 +40,6 @@
   },
   "scripts": {
     "dev": "node --watch ./modules/index.js",
-    "deploy": "npm publish"
+    "deploy": "npm login && npm publish"
   }
 }
