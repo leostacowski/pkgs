@@ -1,8 +1,16 @@
 {
   "name": "@leostacowski/pkgs",
-  "version": "0.0.0",
-  "description": "Centralized package of reusable javascript tools.",
+  "version": "0.0.1",
+  "description": "Centralized package of reusable JavaScript tools.",
   "homepage": "https://www.npmjs.com/package/@leostacowski/pkgs",
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "npm"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "bugs": {
     "url": "https://github.com/leostacowski/pkgs/issues"
   },
@@ -32,6 +40,6 @@
   },
   "scripts": {
     "dev": "node --watch ./modules/index.js",
-    "deploy": "npm run publish"
+    "deploy": "npm publish"
   }
 }
