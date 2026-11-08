@@ -1,6 +1,6 @@
 # @leostacowski/pkgs/fs
 
-A small wrapper around the [`node:fs/promises`](https://nodejs.org/api/fs.html#promises-api) calls I kept rewriting: check a path, list a folder, read, write and append files.
+Small wrapper around [`node:fs/promises`](https://nodejs.org/api/fs.html#promises-api) for checking paths, listing folders, reading, writing and appending files.
 
 > For the main package `@leostacowski/pkgs`: See the [main README.md](https://github.com/leostacowski/pkgs/blob/main/README.md).
 
@@ -44,7 +44,7 @@ const Fs = require('@leostacowski/pkgs/fs').default
 
 ### path_exists(target)
 
-Tells you if the path is there. Files and folders both count, symlinks are followed, and a broken link is `false`.
+Checks whether the path exists. Files and folders both count, symlinks are followed, and a broken link is `false`.
 
 ```js
 if (await Fs.path_exists(join(dir, 'package.json'))) {
@@ -54,7 +54,7 @@ if (await Fs.path_exists(join(dir, 'package.json'))) {
 
 ### is_file(target)
 
-Same as `path_exists`, but only regular files. Folders, missing paths and broken links are all `false`; a symlink to a file counts.
+Checks whether the path is a regular file. Folders, missing paths and broken links are all `false`; a symlink to a file counts.
 
 ```js
 if (await Fs.is_file(join(dir, 'package.json'))) {
@@ -64,7 +64,7 @@ if (await Fs.is_file(join(dir, 'package.json'))) {
 
 ### folder_list(target, options)
 
-Walks a folder and hands you the entries:
+Lists the entries of a folder:
 
 ```js
 {
@@ -84,11 +84,11 @@ Here are the options and their defaults:
 
 Patterns are strings or `RegExp`, and strings are compiled as regular expressions — remember to escape dots.
 
-Missing folders and file targets just give you `[]`. Real errors, like a permission problem, still throw.
+Missing folders and file targets return `[]`. Real errors, like a permission problem, still throw.
 
 ### file_read(target, options)
 
-Reads the file and trims it. Flip `lines` and you get an array of non-empty lines instead. A missing path or a folder gives you `''` (or `[]` with `lines`).
+Reads the file and trims it. With `lines`, returns an array of non-empty lines instead. A missing path or a folder returns `''` (or `[]` with `lines`).
 
 There's no extension check: if it's a file, it reads.
 
@@ -104,9 +104,9 @@ const lines = await Fs.file_read(join(dir, 'README.md'), { lines: true, split: '
 
 ### file_write(target, content)
 
-Writes `content`, replacing whatever was there. The parent folder has to exist — nothing here creates directories.
+Writes `content`, replacing whatever was there. The parent folder must exist — nothing here creates directories.
 
-You get the path back when it works, `null` when it doesn't — folders and read-only files included. `content` is stringified before writing.
+Returns the path on success, `null` otherwise — folders and read-only files included. `content` is stringified before writing.
 
 ### file_append(target, content, options)
 
