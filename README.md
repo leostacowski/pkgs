@@ -1,8 +1,14 @@
 # @leostacowski/pkgs
 
+Centralized package of reusable JavaScript tools.
+
+[![npm version](https://img.shields.io/npm/v/@leostacowski/pkgs.svg)](https://www.npmjs.com/package/@leostacowski/pkgs)
+[![license](https://img.shields.io/badge/license-Unlicense-blue.svg)](https://github.com/leostacowski/pkgs/blob/main/LICENSE)
+[![node](https://img.shields.io/badge/node-%3E%3D22.12.0-brightgreen.svg)](https://nodejs.org/)
+
 _"It's ugly but it's mine."_
 
-\- _Me describing my code._
+— _Me describing my code._
 
 ## Table of Contents
 
@@ -11,16 +17,12 @@ _"It's ugly but it's mine."_
 - [Installation](#installation)
 - [Usage](#usage)
 - [Modules](#modules)
-  - [@leostacowski/pkgs/logger](#leostacowskipkgslogger)
-  - [@leostacowski/pkgs/fs](#leostacowskipkgsfs)
 
 ## Motivation
 
 After repeatedly starting things from scratch for a long time:
 
-```text
-I decided to finally create a centralized repo for my scripts.
-```
+> I decided to finally create a centralized repo for my scripts.
 
 This decision was directly inspired by Eskil Steenberg's talk: "_[You should finish your software](https://youtu.be/EGLoKbBn-VI?si=uFVlbKIcRolcOzCy)_".
 
@@ -30,7 +32,7 @@ I intend to keep adding stuff to this repo as long as I continue to reinvent the
 
 ## Requirements
 
-`node >= 22.12.0` is a _safe choice_, but let me know your luck on older releases.
+> `node >= 22.12.0` is a _safe choice_, but let me know your luck on older releases.
 
 ## Installation
 
@@ -40,42 +42,33 @@ npm i @leostacowski/pkgs
 
 ## Usage
 
-Everything begins at the `@leostacowski/pkgs` package:
+Import what you need from the package root:
 
 ```js
-import pkgs from '@leostacowski/pkgs'
+import { Logger } from '@leostacowski/pkgs'
 // or
-const pkgs = require('@leostacowski/pkgs').default
+const { Logger } = require('@leostacowski/pkgs')
 ```
 
-Then import what you need:
+Or import a single module and ignore the rest:
 
 ```js
-import { ModuleX } from '@leostacowski/pkgs'
+import Fs from '@leostacowski/pkgs/fs'
 // or
-const { ModuleX } = require('@leostacowski/pkgs')
-```
-
-Or import a specific module and ignore the rest:
-
-```js
-import ModuleY from '@leostacowski/pkgs/ModuleY'
-// or
-const ModuleY = require('@leostacowski/pkgs/ModuleY')
+const Fs = require('@leostacowski/pkgs/fs').default
 ```
 
 For usage details on each module, refer to [Modules](#modules).
 
+---
+
 ## Modules
 
-### @leostacowski/pkgs/logger
+| Module   | What it does                                         | Docs                                                                              |
+| -------- | ---------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `logger` | Aliases, types, colors and other knobs.              | [README](https://github.com/leostacowski/pkgs/blob/main/modules/logger/README.md) |
+| `fs`     | Path checks, folder listing, file read/write/append. | [README](https://github.com/leostacowski/pkgs/blob/main/modules/fs/README.md)     |
 
-A simple logger that supports aliases, types, colors and other knobs.
+---
 
-- _README_: [modules/logger/README.md](https://github.com/leostacowski/pkgs/blob/main/modules/logger/README.md).
-
-### @leostacowski/pkgs/fs
-
-Wrapper for basic Node.js [fs/promises](https://nodejs.org/api/fs.html#promises-api) operations.
-
-- _README_: [modules/fs/README.md](https://github.com/leostacowski/pkgs/blob/main/modules/fs/README.md).
+[_Unlicense_](./LICENSE) — do whatever you want.
