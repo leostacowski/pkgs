@@ -12,6 +12,7 @@ _"It's ugly but it's mine."_
 - [Usage](#usage)
 - [Modules](#modules)
   - [@leostacowski/pkgs/logger](#leostacowskipkgslogger)
+  - [@leostacowski/pkgs/fs](#leostacowskipkgsfs)
 
 ## Motivation
 
@@ -71,4 +72,10 @@ For usage details on each module, refer to [Modules](#modules).
 
 A simple logger that supports aliases, types, colors and other knobs.
 
-Check its [README.md](https://github.com/leostacowski/pkgs/blob/main/modules/logger/README.md) for details.
+- _README_: [modules/logger/README.md](https://github.com/leostacowski/pkgs/blob/main/modules/logger/README.md).
+
+### @leostacowski/pkgs/fs
+
+Wrapper for basic Node.js [fs/promises](https://nodejs.org/api/fs.html#promises-api) operations.
+
+- _README_: [modules/fs/README.md](https://github.com/leostacowski/pkgs/blob/main/modules/fs/README.md).
