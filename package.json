@@ -1,6 +1,6 @@
 {
   "name": "@leostacowski/pkgs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Centralized package of reusable JavaScript tools.",
   "homepage": "https://www.npmjs.com/package/@leostacowski/pkgs",
   "keywords": [
