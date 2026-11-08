@@ -33,10 +33,12 @@
   ],
   "exports": {
     ".": "./modules/index.js",
-    "./logger": "./modules/logger/index.js"
+    "./logger": "./modules/logger/index.js",
+    "./fs": "./modules/fs/index.js"
   },
   "imports": {
-    "#logger/*": "./modules/logger/*"
+    "#logger/*": "./modules/logger/*",
+    "#fs/*": "./modules/fs/*"
   },
   "scripts": {
     "dev": "node --watch ./modules/index.js",
