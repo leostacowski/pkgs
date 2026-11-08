@@ -38,7 +38,7 @@ Or straight from the source:
 ```js
 import Logger from '@leostacowski/pkgs/logger'
 // or
-const Logger = require('@leostacowski/pkgs/logger')
+const Logger = require('@leostacowski/pkgs/logger').default
 ```
 
 ## Options
